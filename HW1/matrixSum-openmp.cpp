@@ -10,10 +10,11 @@
 #include <vector>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 double start_time, end_time;
 
-#include <stdio.h>
+
 #define MAXSIZE 100000  /* maximum matrix size */
 #define MAXWORKERS 8   /* maximum number of workers */
 
