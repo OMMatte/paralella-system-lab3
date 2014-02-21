@@ -1,0 +1,16 @@
+Matrix computation using openMÅ.
+Computes and prints the sum of a equally sized matrix.
+Also the position and size of the both the maximum value and the lowest value are printed.
+The values are randomly selected between 0-98.
+
+Standard and maximum value for MATRIX_SIZE is 100000. Minimum value is 1.
+Standard and maximum value for NR_THREADS is 8.
+
+write 'make' to build
+
+Usage: matrixSum-openmp [MATRIX_SIZE] [NR_THREADS]
+
+
+ 
+
+ 

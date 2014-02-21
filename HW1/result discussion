@@ -1,0 +1,10 @@
+First of all my computer, a macbook air, experienced problems when having a matrix size over 25000. Suddenly the execution time spiked from almost 1 second up to about 30-50 seconds. This probably have to do with limited available RAM and/or HD-space. So i had to choose from having tests under 1 second or having tests up to about a minute. I choose the 1 second tests and hope it is ok even though the exercise states that the sequential time should be 1 to to 2 seconds.
+
+Also when i had done assignment a, I had accidentally done assignment b as well so I never saved 2 versions of the programs since I deemed it unneccisairly.
+
+Ideally you want a 100% increased speedup using 2 processors, 200% using 3 processors and 300% using 4 processors. However this is rarely (I almost dare to say never) the case.
+As an average we got about a 53% increase using 2 processors, 82% using 3 processors and 94% using 4 processors. The pdf with more exact measurements is named matrixSum-openmp-runstats.
+
+The smallest matrix of size 15000 got the biggest deviation in runtime compared to the other two which I think mainly is due to the smaller runtimes. Naturally, you can expect larger impact from random computer events when you have lower runtimes.
+There are many reasons why you don't get the theoretical maximum speed boost when using multiple threads. Overhead probably has the biggest impact since, depending on the system, it can cost time to switch between threads and maintain a synchronization at certain points.
+Another notable thing is that we get the smallest relative performance boost going from 3 processors to 4. This is not strange at all since when we use 3 threads (or processors) for a single execution the computer might schedule the last, fourth, processor to handle the other active programs on the computer. So when we add the forth processor we might add a processor that already is heavily loaded.
