@@ -37,7 +37,13 @@ int main(int argc, char *argv[]) {
     
     start_time = omp_get_wtime();
     
+#pragma omp parallel
+    {
+#pragma omp single nowait
+        {
     quicksort(array, 0, size - 1);
+        }
+    }
     
     end_time = omp_get_wtime();
     
@@ -94,13 +100,13 @@ void quicksort(long * a, long first, long last) {
         //be begin by partioning and returning the position of the pivot that we partioned around
         splitter = partition(a, first, last);
         
-        #pragma omp parallel sections
-        {
+//        #pragma omp parallel sections
+//        {
             //here we do the partial work, section by section until we are done
-            #pragma omp section
+             #pragma omp task
             quicksort(a, first, splitter - 1);
-            #pragma omp section
+             #pragma omp task
             quicksort(a, splitter + 1, last);
-        }
+//        }
     }
 }
